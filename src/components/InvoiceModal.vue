@@ -4,7 +4,7 @@
     ref="invoiceWrap"
     class="invoice-wrap flex flex-column"
   >
-    <form @submit.prevent="submitForm" class="invoice-content">
+    <form @submit.prevent="submitForm" class="invoice-content" novalidate>
       <h1>New Invoice</h1>
 
       <!-- BILL FROM -->
@@ -234,6 +234,9 @@ export default {
   width: 100%;
   height: 100vh;
   overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (min-width: 900px) {
     left: 90px;
