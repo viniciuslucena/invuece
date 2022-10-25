@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   name: 'HomeView',
   data() {
@@ -38,11 +40,12 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(['TOGGLE_INVOICE']),
     toggleFilterMenu() {
       this.filterMenu = !this.filterMenu
     },
     newInvoice() {
-      //
+      this.TOGGLE_INVOICE()
     }
   },
   components: {}
